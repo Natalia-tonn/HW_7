@@ -17,7 +17,10 @@ value={{lang, setLang}}>
  
    <Nav/>
 
-<p>Выбранный язык:  <span style={{ color: 'red' }}>{lang}</span></p>
+   <p>
+          {lang === "Eng" ? "Selected Language: " : "Выбранный язык: "} 
+          <span style={{ color: 'red' }}>{lang}</span>
+        </p>
       
    </div>
 
