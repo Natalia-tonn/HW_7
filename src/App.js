@@ -1,25 +1,30 @@
-import logo from './logo.svg';
+
+import { useState } from 'react';
 import './App.css';
+import Nav from './components/Nav';
+import { GlobalContext } from './context/GlobalContext';
 
 function App() {
+
+  const [lang, setLang] = useState("Eng")
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  
+
+<GlobalContext.Provider
+value={{lang, setLang}}>
+<div className="App">
+ 
+   <Nav/>
+
+<p>Выбранный язык:  <span style={{ color: 'red' }}>{lang}</span></p>
+      
+   </div>
+
+  
+</GlobalContext.Provider>
+    
+   );
 }
 
 export default App;
